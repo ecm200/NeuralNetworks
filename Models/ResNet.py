@@ -2,9 +2,9 @@ import tensorflow
 from tensorflow.keras.layers import BatchNormalization, Conv2D, AveragePooling2D
 from tensorflow.keras.layers import MaxPooling2D, ZeroPadding2D
 from tensorflow.keras.layers import Activation, Dense, Flatten, Input, add
-from tensorflow.keras.model import Model
+from tensorflow.keras.models import Model
 from tensorflow.keras.regularizers import l2
-from keras import backend as K
+from tensorflow.keras import backend as K
 
 class ResNet:
 
