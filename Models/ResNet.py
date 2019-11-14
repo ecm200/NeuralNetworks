@@ -55,7 +55,7 @@ class ResNet:
             inputShape = (depth, height, width)
             chanDim = 1
 
-        inputs = Inpute(shape)
+        inputs = Input(inputShape)
         x = BatchNormalization(axis=chanDim, epsilon=bnEps, momentum=bnMom)(inputs)
 
         # TODO Make this a function pass rather than a IF statement so that the dataset defined 
@@ -88,8 +88,8 @@ class ResNet:
         x = AveragePooling2D((8, 8))(x)
 
         # Softmax classifier
-        x = Flatten(x)
-        x = Dense(classes, kernel_regularizerl2(reg))(x)
+        x = Flatten()(x)
+        x = Dense(classes, kernel_regularizer=l2(reg))(x)
         x = Activation("softmax")(x)
 
         # create the model
