@@ -153,6 +153,7 @@ def visualize_layer(model,
 
                 # some filters get stuck to 0, we can skip them
                 if loss_value <= K.epsilon():
+                    print(':: Activation Stuck to 0 ::')
                     return None
 
             # Calculate upscaled dimension
